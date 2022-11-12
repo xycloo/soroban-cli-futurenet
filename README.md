@@ -189,7 +189,7 @@ output:
 ```
 
 # The invoker signature
-What if our contract had a function that does the same thing as `change_val` but relies on a `Signature` rather than on the invoker? That way anyone with a valid signature can invoke the function without the need of being the invoker:
+What if our contract had a function that does the same thing as `change_val` but relies on a `Signature` rather than on the invoker? That way anyone with a valid signature can invoke the function without the need of being the invoker (note that for simplicity we are not using the nonce, which prevents from re-using this signature, to implement the nonce just add a `BigInt` in the signature args and match it against a saved nonce for the signature identifier):
 
 ```rust
 #![no_std]
